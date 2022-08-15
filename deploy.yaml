@@ -13,3 +13,16 @@ spec:
     - containerPort: 10101
       hostPort: 10101
           
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tmpgo-httpserver
+spec:
+  selector:
+    app: tmpgo-httpserver
+  ports:
+    - protocol: TCP
+      name: http
+      port: 10101
+      targetPort: 10101
