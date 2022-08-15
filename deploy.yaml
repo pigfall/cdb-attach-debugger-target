@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tmpgo-httpserver
+spec:
+  # hostNetwork: true
+  containers:
+  - name: tmpgo-httpserver
+    image: koitown/tmpgo:latest
+    imagePullPolicy: Always
+    command: ["/tmpgo"]
+    ports:
+    - containerPort: 10101
+      hostPort: 10101
+          
